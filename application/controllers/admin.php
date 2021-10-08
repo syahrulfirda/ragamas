@@ -5,51 +5,26 @@ class admin extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        
-        // if(!$this->session->userdata('email')){
-        //     redirect('auth');
-        // }
-
+        $this->load->model("m_info","",TRUE);
         $this->load->model("m_kegiatantelah","",TRUE);
-        $this->load->model("m_kegiatan","",TRUE);
+        $this->load->model("m_kegiatanakan","",TRUE);
         $this->load->model("m_pengaduan","",TRUE);
         $this->load->helper('url');
     }
-            public function kegiatan (){
+    // form tambah data kegiatan yang akan pada admin
+            public function form_tambah_kegiatan_akan (){
                 $data['title']='Form Kegiatan akan dilaksanakan';
+                $data['user']=$this->db->get_where('user',['email' =>
+                $this->session-> userdata('email')])->row_array();
+
                 $this->load->view('templates/admin_header',$data);
                 $this->load->view('admin/form_kegiatan_akandilaksanakan');
                 $this->load->view('templates/admin_footer');
-
  }
-            public function kegiatantelah (){
-        
-                $data['title']='Form Kegiatan telah dilaksanakan';
-                $this->load->view('templates/admin_header',$data);
-                $this->load->view('admin/form_kegiatantelahdilaksanakan');
-                $this->load->view('templates/admin_footer');
+//  selesai
 
-}
-       
-         public function kegiatanakandilaksanakan()
-	{
-		$data['title']='kegiatan akan dilaksanakan';
-        $data['kegiatan'] = $this->m_kegiatan->tampil_Data();
-		$this->load->view('user/kegiatan_akandilaksanakan',$data);
-        
-		
-	}
-    
-	public function kegiatantelahdilaksanakan()
-	{
-        $data['title']='kegiatan Telah  dilaksanakan';
-        $data['telah'] = $this->m_kegiatantelah->tampil_Data();
-		$this->load->view('user/kegiatan_dilaksanakan',$data);
-	}
-
-    // tambah data kegiatan yang akan di laksanakan
-    public function tambah_aksi(){
-        
+    // aksi tambah data kegiatan yang akan di laksanakan
+    public function tambah_kegiatan_akan_aksi(){
         $nama_kegiatan   =   $this->input->post('kegiatan');
         $tempat   =   $this->input->post('lokasi');
         $dari_tanggal =   $this->input->post('firstdate');
@@ -62,15 +37,25 @@ class admin extends CI_Controller {
             'sampai_tanggal'                  =>$sampai_tanggal
 
         );
-        $this->m_kegiatan->input_Data($data,'form_kegiatanakan'); 
+        $this->m_kegiatanakan->input_Data($data,'form_kegiatanakan'); 
         $this->session->set_flashdata('message','<div class="alert-success" role="alert">Anda Berhasil menginputkan data</div>'); 
-        redirect('admin/kegiatan');
+        redirect('admin/form_tambah_kegiatan_akan');
     }
-    // end  tambah data kegiatan yang akan di laksanakan
+    // selesai
 
+    // form tambah data kegiatan yang akan pada admin
+    public function form_tambah_kegiatan_telah (){
+        $data['title']='Form Kegiatan telah dilaksanakan';
+        $data['user']=$this->db->get_where('user',['email' =>
+        $this->session-> userdata('email')])->row_array();
 
-    // tambah data kegiatan yang telah di laksanakan
-    public function tambah_aksitelah(){
+        $this->load->view('templates/admin_header',$data);
+        $this->load->view('admin/form_kegiatantelahdilaksanakan');
+        $this->load->view('templates/admin_footer');
+}
+//  selesai
+    // aksi tambah data kegiatan yang telah di laksanakan
+    public function tambah_kegiatan_telah_aksi(){
         
         $nama_kegiatan   =   $this->input->post('kegiatan');
         $tempat   =   $this->input->post('lokasi');
@@ -88,16 +73,18 @@ class admin extends CI_Controller {
         );
         $this->m_kegiatantelah->input_Data($data,'form_kegiatantelah');  
         $this->session->set_flashdata('message','<div class="alert-success" role="alert">Anda Berhasil menginputkan data</div>');
-        redirect('admin/kegiatantelah');
+        redirect('admin/form_tambah_kegiatan_telah ');
     }
-       // end tambah data kegiatan yang telah di laksanakan
+       // selesai
 
        public function kegiatantelahdilaksanakanadmin()
 	{
-      
 		$data['title']='kegiatan telah dilaksanakan';
         $data['user']=$this->db->get_where('user',['email' =>
         $this->session-> userdata('email')])->row_array();
+        
+        $data['count_telah'] = $this->m_kegiatantelah->get_count();
+
         $this->load->view('templates/admin_header',$data);
         $data['telah'] = $this->m_kegiatantelah->tampil_Data();
 		$this->load->view('admin/lihat_Data_telah',$data);
@@ -108,62 +95,106 @@ class admin extends CI_Controller {
 		$data['title']='kegiatan akan dilaksanakan';
         $data['user']=$this->db->get_where('user',['email' =>
         $this->session-> userdata('email')])->row_array();
+
+        $data['count_akan'] = $this->m_kegiatanakan->get_count();
+
         $this->load->view('templates/admin_header',$data);
-        $data['kegiatan'] = $this->m_kegiatan->tampil_Data();
+        $data['kegiatan'] = $this->m_kegiatanakan->tampil_Data();
 		$this->load->view('admin/lihat_data_akan',$data);
 		$this->load->view('templates/admin_footer');
 	}
     // hapus data kegiatan yang telah di laksanakan
-    public function del($id)
+    public function delete_akan($id)
 	{
-        $this->m_pengaduan->delkegiatantelah($id);
-        redirect('admin/kegiatantelahdilaksanakanadmin');
-	}
-     // end  hapus data kegiatan yang telah di laksanakan
-
-    //  hapus data kegiatan akan dilaksankan
-     public function delakan($id)
-	{
-        $this->m_pengaduan->delkegiatanakan($id);
+        $this->m_kegiatanakan->delkegiatanakan($id);
         redirect('admin/kegiatanakandilaksanakanadmin');
 	}
-     //  end  hapus data kegiatan akan dilaksankan
+     // selesai
+
+    //  hapus data kegiatan akan dilaksankan
+     public function delete_telah($id)
+	{
+        $this->m_kegiatantelah->delkegiatantelah($id);
+        redirect('admin/kegiatantelahdilaksanakanadmin');
+	}
+     //  selesai
     
-     //edit kegiatan akan dilaksanakan
-     public function edit($id){
-        $where = array('id' => $id);
-       
-        $data['title']='kegiatan akan dilaksanakan';
-        $this->load->view('templates/admin_header',$data); 
+    // melihat data informasi info cimahi pada admin
+    public function lihat_info()
+	{
       
+		$data['title']='Info Cimahi';
+        $data['user']=$this->db->get_where('user',['email' =>
+        $this->session-> userdata('email')])->row_array();
         
-        $data['kegiatan'] = $this->m_kegiatan->edit_data($where,'form_kegiatanakan')->result();
-        $this->load->view('admin/edit_data_akan',$data);
-    
-    }
-    // 
-    function update(){
+        $this->load->view('templates/admin_header',$data);
+        $data['info'] = $this->m_info->tampil_Data();
+		$this->load->view('admin/lihat_info',$data);
+        $this->load->view('templates/admin_footer');
+	}
+    // selesai
 
-        $id = $this->input->post('id');
-        $nama_kegiatan   =   $this->input->post('kegiatan');
-        $tempat   =   $this->input->post('lokasi');
-        $dari_tanggal =   $this->input->post('firstdate');
-        $sampai_tanggal   =   $this->input->post('endate');
+    // mengisi data tambah info cimahi pada admin
+    public function infocimahi(){
+
+        $data['title']='Form Info Cimahi';
+        $data['info'] = $this->m_info->tampil_Data();
+        $data['user']=$this->db->get_where('user',['email' =>
+        $this->session-> userdata('email')])->row_array();
         
+        $this->load->view('templates/admin_header',$data); 
+        $this->load->view('admin/form_infocimahi',$data);
+        $this->load->view('templates/admin_footer');
+    }
+    // selesai
+
+    // fungsi tambah info cimahi
+    public function infocimahi_tambah(){
+        $judul_berita   =   $this->input->post('judul_berita');
+        $isi_berita   =   $this->input->post('isi_berita');
+        $gambar              =$_FILES['gambar'];
+
+        if($gambar=''){}else{
+            $config['upload_path']      ='./asset/img/gambarberita';
+            $config['allowed_types']    ='jpg|png|gif';
+
+            $this->load->library('upload',$config);
+            if($this->upload->do_upload('gambar')){
+                $gambar=$this->upload->data('file_name');
+            }
+        }
+
         $data = array(
-           
-            'nama_kegiatan '                =>$nama_kegiatan ,
-            'tempat'                            =>$tempat,
-            'dari_tanggal'                     =>$dari_tanggal,
-            'sampai_tanggal'                  =>$sampai_tanggal
+            'judul_berita '                =>$judul_berita ,
+            'isi_berita'                     =>$isi_berita,
+            'gambar'                        =>$gambar
+            
 
         );
-        $where = array(
-            'id'                =>$id
-        );
-        $this->m_kegiatan->update_Data($where,$data,'form_kegiatanakan'); 
-	    redirect('admin/kegiatanakandilaksanakanadmin');
+        $this->m_info->input_Data($data,'infocimahiselatan'); 
+        $this->session->set_flashdata('message','<div class="alert-success" role="alert">Anda Berhasil menginputkan data</div>'); 
+        redirect('admin/infocimahi');
     }
+    // selesai
+
+    // hapus info cimahi
+    public function hapusinfo($id)
+	{
+
+        $this->m_info->del($id);
+        $this->session->set_flashdata('message','<div class="alert-success" role="alert">Anda Berhasil menghapus Data Pengaduan</div>');
+        redirect('admin/lihat_info');
+	}
+    // selesai
+
+    public function panduan_admin()
+{
+    $data['title']='Panduan Admin';
+    $this->load->view('templates/kegiatan_header',$data);
+    $this->load->view('admin/panduan_admin',$data);
+    $this->load->view('templates/kegiatan_footer');
 }
+}
+
 
 ?>

@@ -28,115 +28,150 @@
 </head>
 <style>
     @media print{
-        .h3{
-            margin-top:70px;
-        }
+        
         .navbar-nav,  
         .btn,
-        .fas,
-        th:nth-child(9),td:nth-child(9)
+        th:nth-child(11),td:nth-child(11)
+        th:nth-child(12),td:nth-child(12)
+        th:nth-child(13),td:nth-child(13)
+        th:nth-child(14),td:nth-child(14)
         {
             display: none;
         }
     }
     table{
     table-layout: fixed;
-    width: 450px;
+  
     word-wrap: break-word;
-    /* border: 2px solid black; */
-    border-collapse: collapse;
+    overflow: hidden;
 }
     </style>
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-users-cog"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">WPAKCS</div>
-            </a>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+        <i class="fas fa-users-cog"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">PENGMAS </div>
+    </a>
 
-             <!-- Divider -->
-             <hr class="sidebar-divider">
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-<!-- Heading -->
-<div class="sidebar-heading">
-   Halaman
-</div>
+    <!-- Nav Item - Dashboard -->
 
-<!-- Nav Item - Dashboard -->
- <!-- Nav Item - Tables -->
- <li class="nav-item">
-   <a class="nav-link" href="<?=base_url('C_pengaduan');?>">
-       <i class="fas fa-fw fa-table"></i>
-       <span>Pengaduan</span></a>
-</li>
+    <div class="sidebar-heading">
+     Pengaduan
+    </div>
 
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url('C_pengaduan');?>">
+        <i class="fas fa-fw fa-table"></i>
+            <span>Pengaduan</span></a>
+    </li>
 
- <!-- Nav Item - Kegiatan telah -->
- <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Form kegiatan telah &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dilaksanakan</span>
-                </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="<?=base_url('admin/kegiatantelah');?>">Tambah Data</a>
-                        <a class="collapse-item" href="<?=base_url('admin/kegiatantelahdilaksanakanadmin');?>">Lihat Data User</a>
-                        
-                    </div>
-                </div>
-            </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
 
-             <!-- Nav Item - Kegiatan akan -->
- <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Form kegiatan yang akan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dilaksanakan</span>
-                </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="<?=base_url('admin/kegiatan');?>">Tambah Data</a>
-                        <a class="collapse-item" href="<?=base_url('admin/kegiatanakandilaksanakanadmin');?>">Lihat Data User</a>
-                        
-                    </div>
-                </div>
-            </li>
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Kegiatan
+    </div>
 
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-folder"></i>
+            <span> Kegiatan rencana</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Kegiatan rencana:</h6>
+                <a class="collapse-item" href="<?=base_url('admin/form_tambah_kegiatan_akan');?>">Tambah data kegiatan</a>
+                <a class="collapse-item" href="<?=base_url('admin/kegiatanakandilaksanakanadmin');?>">Lihat data kegiatan</a>
+            </div>
+        </div>
+    </li>
 
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Kegiatan telah selesai</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Kegiatan telah selesai</h6>
+                <a class="collapse-item" href="<?=base_url('admin/form_tambah_kegiatan_telah');?>">Tambah data kegiatan</a>
+                <a class="collapse-item" href="<?=base_url('admin/kegiatantelahdilaksanakanadmin');?>">lihat data kegiatan</a>
+            </div>
+        </div>
+    </li>
 
-<!-- Divider -->
-<hr class="sidebar-divider">
+    
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-<!-- Heading -->
-<div class="sidebar-heading">
-   Profil
-</div>
-<!-- Nav Item - profile -->
-<li class="nav-item">
-   <a class="nav-link" href="<?=base_url('auth/ganti_password');?>">
-       <i class="fas fa-fw fa-key"></i>
-       <span>Ganti Password</span></a>
-</li>
-<!-- Divider -->
-<hr class="sidebar-divider">
+    <!-- Nav Item - Dashboard -->
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+    
+    <div class="sidebar-heading">
+    Info cimahi
+    </div>
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Info cimahi</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Info cimahi</h6>
+                <a class="collapse-item" href="<?=base_url('admin/infocimahi');?>">Tambah data info KCS</a>
+                <a class="collapse-item" href="<?=base_url('admin/lihat_info');?>">lihat data info cimsel</a>
+            </div>
+        </div>
+    </li>
+
+    <div class="sidebar-heading">
+     Panduan
+    </div>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url('admin/panduan_admin');?>">
+        <i class="fas fa-fw fa-book"></i>
+            <span>Panduan</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+     Akun
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url('auth/ganti_password');?>">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Ganti password</span></a>
+    </li>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
                                 Logout
                                 </button>
 
@@ -160,13 +195,17 @@
                 </div>
             </div>
             </div>
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>
+<!-- End of Sidebar -->
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
 
-        </ul>
+           
+
+      

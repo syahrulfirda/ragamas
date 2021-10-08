@@ -61,7 +61,7 @@ table{
                                     <div class="container">
                                      <div class="d-flex justify-content-between align-items-center">
                                       <ol>
-                                         <li><a href="<?=base_url('welcome')?>">BERANDA</a></li>
+                                         <li><a href="<?=base_url('welcome/index')?>">BERANDA</a></li>
                                         <li><a>KEGIATAN YANG TELAH DILAKSANAKAN OLEH KECAMATAN CIMAHI SELATAN</a></li>
                                         </ol>
                                         </div>
@@ -80,7 +80,7 @@ table{
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <center>
-                                        <h1 class="h3 mb-2 text-gray-800">Kegiatan yang telah di laksanakan</h1>
+                                        <h1 class="h3 mb-2 text-gray-800">Kegiatan selesai KCS</h1>
                                         <p class="mb-4">Berikut adalah kegiatan-kegiatan yang telah diselenggarakan oleh kecamatan cimahi selatan </p>
                                  </center>
                                         <tr>

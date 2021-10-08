@@ -8,5 +8,7 @@ class m_cetak extends CI_Model{
     $query=$this->db->get('pengaduan');
     return $query->result_array();
 }
+
+
 }
 ?>

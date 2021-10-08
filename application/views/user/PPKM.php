@@ -1,4 +1,19 @@
 
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+      <i class="glyphicon glyphicon-exclamation-sign"><a href="#">Jl. Baros No.14, Utama, Kec. Cimahi Sel., Kota Cimahi, Jawa Barat 40533</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>(022) 6629676</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com/kec.cimsel?utm_medium=copy_link" class="instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
     <a href="index.html" class="logo me-auto"><img  src="<?=base_url('asset/img/logo.png');?>" alt="">
@@ -7,59 +22,72 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
     </div>
-  </header>
+  </header><!-- End Header -->
 
   <main id="main" data-aos="fade-up">
+
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
+
         <div class="d-flex justify-content-between align-items-center">
+          <h2>Info Cimahi</h2>
           <ol>
-            <li><a href="<?=base_url('welcome')?>">BERANDA</a></li>
-            <li><a>INFO CIMAHI</a></li>
+            <li><a href="<?=base_url('welcome/index')?>">Beranda</a></li>
+            <li>Info cimahi selatan</li>
           </ol>
         </div>
+
       </div>
     </section>
     <!-- Breadcrumbs Section -->
+
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
-            <div class="portfolio-info">
-              <div class="container">
-                <div class="row ">
-                  <div class="col-sm-5">
-                    <div class="portfolio-details-slider swiper-container">
-                        <div class="swiper-slide">
-                          <img src="<?=base_url('asset/img/portfolio/cimahi1.jpeg')?>" alt=""><
-                        </div>
-                    </div>
-                  </div>
+      <div class="container">
+      <?php
+      foreach ($info as $mhs ):?>
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper-container">
+                <div class="swiper-slide">
+                <img src="<?=base_url('asset/img/gambarberita/');?><?php echo $mhs['gambar']?>">
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
             <div class="portfolio-description">
-              <h2>Apakah PPKM akan di perpanjang ?</h2>
-              <p>
-                Perpanjangan Pemberlakuan Pembatasan Kegiatan Masyarakat (PPKM) Level 4 bakal berakhir pada Senin (2/8/2021) besok.
-Akankah PPKM Level 4 bakal diperpanjang setelah sebulan diberlakukan? 
-Diketahui, PPKM Level 4 atau yang sebelumnya bernama PPKM Darurat diberlakukan sejak 3 Juli hingga 20 Juli 2021.
-Setelah itu, PPKM Darurat diperpanjang hingga 26 Juli dan diperpanjang lagi hingga 2 Agustus 2021. 
-
-Namun, dalam perpanjangan yang kedua kalinya, PPKM Level 4 telah mengalami sejumlah pelonggaran.
-Setelah diperpanjang dua kali, akankah PPKM Level 4 bakal diperpanjang lagi?
-
-Hingga berita ini ditulis Minggu (1/8/2021) pukul 15.39 WIB, belum ada keputusan dari Pemerintah soal nasib PPKM Level 4.
-Apakah akan diperpanjang atau tidak.
-
-Presiden Joko Widodo (Jokowi) pernah menyatakan PPKM Darurat atau PPKM Level 4 bakal dibuka secara bertahap apabila kasus Covid-19 bakal menurun.
-
-Lantas, seperti apa data kasus Covid-19 dalam sepekan terakhir.
-Dari sisi penambahan kasus baru, terlihat adanya penurunan kasus Covid-19 dalam beberapa hari terakhir.
-Meski demikian, angka tambahan kasus baru harian relatif masih tinggi. 
-Sementara itu, untuk kasus kematian relatif masih stabil tinggi. 
-
-selengkapnya:tribunnews.com
-#infocimahi #cimahi #cimtizen #kotacimahi #jakarta #bandung #lembang #jawabarat #ppkm
+              <h2><?php echo $mhs['judul_berita']?></h2>
+              <p style="word-wrap: break-word;"> 
+              <?php echo $mhs['isi_berita']?>
               </p>
             </div>
           </div>
         </div>
+      </div>
+      <?php endforeach;?>  
     </section>
-    
+    <!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+        </div>
+      </div>
+    </div>
+
+  
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

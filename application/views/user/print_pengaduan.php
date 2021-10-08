@@ -16,8 +16,6 @@
 			<p>Telp/Fax : (022) 6629676</p></h3>       
 		</td>
 		</table>
-        <a href="<?=base_url('C_pengaduan/pdf');?>" class=" btn btn-xs btn-warning ">
-                     <i  class="fa fa-file fa-sm text-white-50"></i>&nbsp;Export PDF</a>
 		<hr size="2px" noshade="">
 		<br>
         <?php
@@ -38,13 +36,28 @@
                   <td style="width:10px;">:</td>
                   <td><?php echo $mhs['nik']?></td>
  		 	</tr>
+            <tr align="left">
+ 		 		<th style="width:150px;">Kota</th>
+                  <td style="width:10px;">:</td>
+                  <td><?php echo $mhs['kota']?></td>
+ 		 	</tr>
+              <tr align="left">
+ 		 		<th style="width:150px;">Kecamatan</th>
+                  <td style="width:10px;">:</td>
+                  <td><?php echo $mhs['kecamatan']?></td>
+ 		 	</tr>
+            <tr align="left">
+ 		 		<th style="width:150px;">Kelurahan</th>
+                  <td style="width:10px;">:</td>
+                  <td><?php echo $mhs['kelurahan']?></td>
+ 		 	</tr>
  		 	<tr align="left">
  		 		<th style="width:150px;">Judul Laporan</th>
                   <td style="width:10px;">:</td>
                   <td><?php echo $mhs['judul_laporan']?></td>
  		 	</tr>
  		 	</tr>
-              <tr align="left">
+            <tr align="left">
  		 		<th style="width:150px;">Tanggal</th>
                   <td style="width:10px;">:</td>
                   <td><?php echo $mhs['tanggal']?></td>
@@ -53,11 +66,6 @@
                   <th style="width:150px;">Kontak Pelopor</th>
                   <td style="width:10px;">:</td>
                   <td>+62<?php echo $mhs['kontak_pelopor']?></td>
-              </tr>
-              <tr align="left">
-                  <th style="width:150px;">Tempat Tinggal</th>
-                  <td style="width:10px;">:</td>
-                  <td><?php echo $mhs['tempat_tinggal']?></td>
               </tr>
               <tr align="left" class="atur2">
  		 		<th style="width:150px;">Detail Pengaduan</th>
@@ -71,7 +79,9 @@
          <p align="center"><b> &nbsp &nbsp &nbsp Surat ini dibuat dengan sebenar-benarnya  oleh <i><?php echo $mhs['nama_pelopor']?></i> sebagai pelapor dengan nik <i><?php echo $mhs['nik']?></b></i></p>
 
  		
-                            
+         <script type="text/javascript">
+                                window.print();
+                                </script>                      
 </body>
 <link href="<?=base_url('asset/css/style.css')?>" rel="stylesheet">
 <link href="<?=base_url('asset/');?>css/sb-admin-2.min.css" rel="stylesheet">

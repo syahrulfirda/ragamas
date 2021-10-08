@@ -12,25 +12,17 @@
                     <ul class="navbar-nav ml-auto"> 
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$user['name']?></span>
-                            </a>
-                        </li>
-                    </ul>
+                      <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle"  id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$user['name']?></span>
+                    </a>
+                </li>
                 </nav>
                 
              <!-- Begin Page Content -->
              <div class="container-fluid">
-             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <!-- tombol print -->
-                    <a href="#" class=" btn btn-xs btn-primary " onclick="window.print()">
-                     <i  class="fas fa-download fa-sm text-white-50"></i>&nbsp;Cetak Seluruh Laporan</a>
-                         <!-- akhir tombol print -->
-                         <!-- pdf -->
-                     <a href="<?=base_url('C_pengaduan/pdf');?>" class=" btn btn-xs btn-warning ">
-                     <i  class="fa fa-file fa-sm text-white-5"></i>&nbsp;Export PDF</a>
-                     <!-- end pdf -->
-                    </div>
              <div class="row">
                     <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
@@ -40,6 +32,57 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Jumlah data pengaduan</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$count;?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                        <i class="fas fa-list-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Jumlah Rencana Kegiatan KCS</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$count_akan;?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                        <i class="fas fa-list-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Jumlah kegiatan Selesai KCS</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$count_telah;?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                        <i class="fas fa-list-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Jumlah informasi KCS</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$count_info;?></div>
                                         </div>
                                         <div class="col-auto">
                                         <i class="fas fa-list-alt fa-2x text-gray-300"></i>
@@ -61,35 +104,39 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                                          <th >No</th>
-                                            <th >Nama Pelopor</th>
+                                            <th >No</th>
+                                            <th >Nama</th>
                                             <th >Nik</th>
-                                            <th >Judul Laporan</th>
+                                            <th >Kota</th>
+                                            <th >kecamatan</th>
+                                            <th >kelurahan</th>
+                                            <th>Kontak</th>
+                                            <th >Judul </th>
                                             <th >Detail Pengaduan</th>
                                             <th >Tanggal</th>
-                                            <th >Kontak Pelopor</th>
-                                            <th >tempat tinggal</th>
-                                            <th >Bukti   </th>
-                                            <th> Aksi Hapus</th>
-                                            <th> Aksi Cetak</th>
-                                            <th> Balas Aduan Via WA</th>
+                                            <th >Bukti</th>
+                                            <th>Hapus</th>
+                                            <th>Cetak</th>
+                                            <th> Balas Via WA</th>
                                             
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                     <th >No</th>
-                                            <th >Nama Pelopor</th>
+                                            <th >Nama </th>
                                             <th >Nik</th>
-                                            <th >Judul Laporan</th>
+                                            <th >Kota</th>
+                                            <th >kecamatan</th>
+                                            <th >kelurahan</th>
+                                            <th >Kontak</th>
+                                            <th >Judul</th>
                                             <th >Detail Pengaduan</th>
                                             <th >Tanggal</th>
-                                            <th >Kontak Pelopor</th>
-                                            <th >tempat tinggal</th>
                                             <th >Bukti   </th>
-                                            <th> Aksi Hapus</th>
-                                            <th> Aksi Cetak</th>
-                                            <th> Balas Aduan Via WA</th>
+                                            <th> Hapus</th>
+                                            <th> Cetak</th>
+                                            <th> Balas Via WA</th>
                                         
                                            
                     </tr>
@@ -102,11 +149,13 @@
                         <td><?php echo $no++?></td>
                         <td><?php echo $mhs['nama_pelopor']?></td>
                         <td><?php echo $mhs['nik']?></td>
+                        <td><?php echo $mhs['kota']?></td>
+                        <td><?php echo $mhs['kecamatan']?></td>
+                        <td><?php echo $mhs['kelurahan']?></td>
+                        <td><?php echo $mhs['kontak_pelopor']?></td>
                         <td><?php echo $mhs['judul_laporan']?></td>
                         <td><?php echo $mhs['detail_pengaduan']?></td>
                         <td><?php echo $mhs['tanggal']?></td>
-                        <td><?php echo $mhs['kontak_pelopor']?></td>
-                        <td><?php echo $mhs['tempat_tinggal']?></td>
                         <td >
                                                 
                                                 <img src="<?=base_url('asset/img/bukti/');?><?php echo $mhs['bukti']?>" width="90" height="70" alt="">
@@ -155,7 +204,6 @@
     </div>
 </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>

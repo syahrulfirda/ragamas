@@ -22,23 +22,6 @@ class m_pengaduan extends CI_Model{
 		$this->db->delete('pengaduan',['id' => $id]);
 	}
     // end hapus data pengaduan
-    public function delkegiatantelah($id)
-    {
-     $this->db->delete('form_kegiatantelah',['id' => $id]);
-    }
-    public function delkegiatanakan($id)
-    {
-     $this->db->delete('form_kegiatanakan',['id' => $id]);
-    }
-    public function get_keyword($search)
-    {
-        $this->db->select('*');
-		$this->db->from('pengaduan');
-	
-			$this->db->like('nama_pelopor',$search);
-		
-		return $this->db->get()->result_array();
-	}
 }
 
 

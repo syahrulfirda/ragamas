@@ -29,7 +29,7 @@
         <div class="wrapper wrapper--w900">
             <div class="card card-6">
                 <div class="card-heading">
-                    <h2 class="title">Lapor Pengaduan Anda!</h2>
+                    <h2 class="title" style="color:black;text-align:center;">Lapor Pengaduan Anda!</h2>
                 </div>
                 <div class="card-body">
 
@@ -39,7 +39,7 @@
                         <div class="form-row">
                             <div class="name">Nama Pelapor</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="nama" autofocus  placeholder="Isi nama anda" required>
+                                <input class="input--style-6" type="text" name="nama" autofocus  placeholder="Isi nama anda"required>
                             </div>
                         </div>
                         
@@ -51,7 +51,66 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name"> Kategori Pengaduan</div>
+                            <div class="name"> Kota</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="input--style-6" required>
+                                        <select name="kota" required>
+                                            <!-- <option disabled="disabled" selected="selected" >Pilih Kategori Laporan Anda</option> -->
+                                            <option>Cimahi</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name"> Kecamatan</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="input--style-6" required>
+                                        <select name="kecamatan" required>
+                                            <!-- <option disabled="disabled" selected="selected" >Pilih Kategori Laporan Anda</option> -->
+                                            <option>cimahi selatan</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name"> Kelurahan</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="input--style-6" required>
+                                        <select name="kelurahan" required>
+                                            <!-- <option disabled="disabled" selected="selected" >Pilih Kategori Laporan Anda</option> -->
+                                            <option>Leuwigajah</option>
+                                            <option>Utama</option>
+                                            <option>Cibeber</option>
+                                            <option>Melong</option>
+                                            <option>Cibeureum</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Kontak Pelopor</div>
+                            <div class="value">
+                            <div class="input-group">
+                            <input class="input--style-6" type="number" name="kontak"  value="62" style="width: 100px;" readonly > 
+                             <input class="input--style-6" type="tel" name="kontak" pattern="[1-9]{3}[0-9]{4}[0-9]{4}" style="width: 200px;" required title="Format Penulisan Contoh 8531234xxxx tanpa (0)"  maxlength="11"> 
+                        </div>
+                        </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name"> Topik Pengaduan</div>
                             <div class="value">
                                 <div class="input-group">
                                     <div class="input--style-6" required>
@@ -98,41 +157,14 @@
                             </div>
                             
                         </div>
+   
                        
-                        <div class="form-row">
-                            <div class="name">Tanggal Melapor</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-6" type="date" name="tanggal">
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Kontak Pelopor</div>
-                            <div class="value">
-                            <div class="input-group">
-                            <input class="input--style-6" type="number" name="kontak"  value="62" style="width: 100px;" readonly > 
-                             <input class="input--style-6" type="tel" name="kontak" pattern="[1-9]{3}[0-9]{4}[0-9]{4}" style="width: 200px;" required title="Format Penulisan Contoh 8531234xxxx tanpa (0)"  maxlength="11"> 
-                                 
-                        </div>
-                          
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Tempat Tinggal</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-6" type="text" name="tempat" placeholder="tempat tinggal anda sesuai KTP">
-                                    <small id="emailHelp" class="form-text text-muted">Harus sesuai KTP</small>
-                                </div>
-                            </div>
-                        </div>
                          <div class="form-row">
                             <div class="name">Upload File</div>
                             <div class="value">
                                 <div class="input-group js-input-file">
-                                    <input  type="file" name="bukti" id="bukti" >
+                                    <input  type="file" name="bukti" id="bukti" required>
                                     <small  class="form-text text-muted">Upload File Harus di isi</small>
                                 </div>
                                 <!-- <div class="label--desc">Upload your CV/Resume or any other relevant file. Max file size 50 MB</div> -->
@@ -142,7 +174,7 @@
               
                 <div class="card-footer">
                     <button class="btn btn--radius-2 btn--blue-2" type="submit">Kirim</button>
-                    <a class="btn btn--radius-2 btn--blue-2" href="<?=base_url('welcome')?>">Kembali</a>
+                    <a class="btn btn--radius-2 btn--blue-2" href="<?=base_url('welcome/index')?>">Kembali</a>
                 </div>
            
                 <?=form_close();?>

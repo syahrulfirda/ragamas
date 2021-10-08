@@ -2,7 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
-
+	public function __construct(){
+        parent::__construct();
+		$this->load->model("m_kegiatan","",TRUE);
+		$this->load->model("m_kegiatantelah","",TRUE);
+        $this->load->model("m_pengaduan","",TRUE);
+		$this->load->model("m_info","",TRUE);
+        
+    }
 	public function index()
 	{
 
@@ -20,14 +27,5 @@ class User extends CI_Controller {
 		// $this->load->view('welcome/beranda',$data);
 		
 	}
-	public function formpengaduan()
-	{
-		$data['title']='Lapor Pengaduan Anda';
-		
-		$this->load->view('user/mas_pengaduan',$data);
-		
-		
-	}
-	
 	
 }

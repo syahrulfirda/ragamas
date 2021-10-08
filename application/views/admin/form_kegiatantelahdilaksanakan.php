@@ -3,7 +3,22 @@
             <!-- Main Content -->
             <div id="content">
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                 <!-- Topbar -->
+                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto"> 
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$user['name']?></span>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
                 <!-- End of Topbar -->
 
@@ -15,7 +30,6 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                   <div class="container">
-
                                     <!-- Outer Row -->
                                     <div class="row justify-content-center">
                                         <div class="col-lg-7">
@@ -29,7 +43,7 @@
                                                                     <h1 class="h4 text-gray-900 mb-4">Input Kegiatan yang telah dilaksanakan</h1>
                                                                 </div>
                                                                 <?=$this->session->flashdata('message');?>
-                                                                <?=form_open_multipart('admin/tambah_aksitelah')?>
+                                                                <?=form_open_multipart('admin/tambah_kegiatan_telah_aksi')?>
                                                                     <div class="form-group">
                                                                         <input type="text" class="form-control form-control-user"
                                                                             id="email" aria-describedby="emailHelp"
