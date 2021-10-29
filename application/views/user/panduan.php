@@ -30,8 +30,6 @@
     <!-- end breadcumbs -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <!-- Page Heading -->
-                    <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-body">
                                 <center>
@@ -76,7 +74,6 @@
                     &nbsp;&nbsp;&nbsp;Disini anda menyampaikan pengaduan anda sesuai topik yang anda pilih.<br>
                     o	<b>Upload file</b><br>
                     &nbsp;&nbsp;&nbsp;Disini anda wajib menserta gambar untuk memperkuat pengaduan anda.<br>
-                    
                     </p>
                 </div>
               </li>
@@ -85,7 +82,8 @@
         </div>
       </div>
     </section>
-    <!-- End About Section -->    
+    <!-- End  -->    
+    <!-- kegiatan -->
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -98,14 +96,14 @@
             Pada menu ini berisi informasi kegiatan yang <b>akan</b> dilaksanakan dan kegiatan yang <b>telah</b> dilaksanakan kecamatan cimahi selatan.
             menu ini berfungsi untuk menginformasikan kepada masyararakat kecamatan cimahi selatan tentang kegiatan-kegiatan yang berada dalam ruang lingkup kecamatan cimahi selatan.
             </p>
-            
           </div>
         </div>
       </div>
     </section>       
 
     </section>
-    <!-- End About Section -->    
+    <!-- End  -->    
+    <!-- jumlah -->
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -117,14 +115,13 @@
             <p class="fst-italic" style="text-align: justify;">
            Masyarakat dapat mengetahui jumlah informasi yang berada dalam KCS(kecamatan cimahi selatan)
             </p>
-            
           </div>
         </div>
       </div>
     </section>       
-
+<!-- end -->
     
-    <!-- End About Section -->    
+<!-- info cimsel -->
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -136,13 +133,13 @@
             <p class="fst-italic" style="text-align: justify;">
            Masyarakat dapat mengetahui informasi/berita seputaran cimahi selatan.
             </p>
-            
           </div>
         </div>
       </div>
-    </section>       
+    </section>   
+        <!--end  -->
     </div>
-     </div>
+    </div>
     </div>
     </div>
         <!-- End of Content Wrapper -->

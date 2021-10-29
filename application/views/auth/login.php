@@ -21,7 +21,7 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="email" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address..." name="email" value="<?=set_value('email');?>">
+                                                placeholder="Masukan Email" name="email" value="<?=set_value('email');?>">
                                                 <?=form_error('email',' <small class="text-danger pl-3">','</small> ');?>
                                         </div>
                                         <div class="form-group">
@@ -29,19 +29,15 @@
                                                 id="password" placeholder="Password" name="password">
                                                 <?=form_error('password',' <small class="text-danger pl-3">','</small> ');?>
                                         </div>
-                                        
+
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
                                         <hr>
                                       
                                     </form>
-                                    
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="<?=base_url('auth/registration');?>">Create an Account!</a>
+                                        <a class="small" href="<?=base_url('auth/registration');?>">Buat Akun!</a>
                                     </div>
                                 </div>
                             </div>

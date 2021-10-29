@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title><?=$title;?></title>
-    <!-- Custom fonts for this template -->
-    <link href="<?=base_url('asset/');?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="<?=base_url('asset/');?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="<?=base_url('asset/');?>css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- Custom styles for this page -->
-    <link href="<?=base_url('asset/');?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="<?=base_url('asset/css/style.css')?>" rel="stylesheet">
-</head>
-<style>
-table{
-    table-layout: fixed;
-    width: 450px;
-    word-wrap: break-word;
-    border: 2px solid black;
-    border-collapse: collapse;
-}
-table{
-    table-layout: fixed;
-    width: 450px;
-    word-wrap: break-word;
-    border: 2px solid black;
-    border-collapse: collapse;
-}
-
-</style>
-
-<body id="page-top">
 <!-- ======= HEADER ======= -->
 <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -70,12 +30,8 @@ table{
     <!-- end breadcumbs -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <!-- Page Heading -->
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                           
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -113,20 +69,3 @@ table{
         </div>
         <!-- End of Content Wrapper -->
     </div>
-    <!-- End of Page Wrapper -->    <!-- Bootstrap core JavaScript-->
-    <script src="<?=base_url('asset/');?>vendor1/jquery/jquery.min.js"></script>
-    <script src="<?=base_url('asset/');?>vendor1/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="<?=base_url('assets');?>vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="<?=base_url('asset/');?>js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="<?=base_url('asset/');?>vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="<?=base_url('asset/');?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?=base_url('asset/');?>js/demo/datatables-demo.js"></script>
-
-</body>
-</html>

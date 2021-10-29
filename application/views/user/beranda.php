@@ -1,4 +1,3 @@
-
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -30,10 +29,12 @@
           <li><a class="nav-link scrollto " href="<?=base_url('welcome/panduan');?>">Panduan</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
+      <!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -41,17 +42,16 @@
       <h1>Selamat<span> Datang</span></h1>
       <h2>Layanan Pengaduan Masyarakat Kecamatan Cimahi Selatan</h2>
       <div class="d-flex">
-        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+        <!-- <a href="" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>TONTON</span></a> -->
       </div>
     </div>
-  </section><!-- End Hero -->
+  </section>
+  <!-- End Hero -->
 
   <main id="main">
-
-    <!-- ======= Featured Services Section ======= -->
+    <!-- ======= PENGADUAN MASYARAKAT ======= -->
     <section id="featured-services" class="featured-services">
       <div class="container" data-aos="fade-up">
-
         <div class="row">
           <div class="">
             <div class="icon-box" data-aos="fade-up" >
@@ -60,21 +60,17 @@
               <p class="description">Klik disini untuk menyampaikan pengaduan anda ke kecamatan cimahi selatan</p>
             </div>
           </div>
-
         </div>
-
       </div>
-    </section><!-- End Featured Services Section -->
+    </section>
+    <!-- End  -->
 
-    <!-- ======= About Section ======= -->
+    <!-- ======= Tentang Kota Cimahi ======= -->
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Tentang Kota Cimahi</h2>
-          
         </div>
-
         <div class="row">
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
             <img src="<?=base_url('asset/img/logo.png');?>" class="img-fluid" alt="">
@@ -95,13 +91,14 @@
        
                 <div>
                   <h5>Misi Kota Cimahi </h5>
-                  <p>o	Meningkatkan sarana perekonomian dan lapangan kerja <br>
+                  <p>
+                    o	Meningkatkan sarana perekonomian dan lapangan kerja <br>
                     o	Meningkatkan kualitas pendidikan dan Kesehatan<br>
                     o	Meningkatkan penataan dan penegakan hukum<br>
                     o	Meningkatkan infrastruktur kota <br>
                     o	Mengendalikan pembangunan agar berwawasan lingkungan <br>
                     o	Meningkatkan kemitraan dengan dunia usaha<br>
-                    </p>
+                  </p>
                 </div>
               </li>
             </ul>
@@ -112,20 +109,15 @@
                   <p>Saluyu Ngawangun Jati Mandiri , yang artinya memiliki pengertian berjalan harmonis serasi dengan selaras, bahu membahu dalam membangun citra diri yang mandiri dalam kemajuan </p>
                 </div>
               </li>
-             
             </ul>
-          
           </div>
         </div>
-
       </div>
-    </section><!-- End About Section -->
-
-
-    <!-- ======= Counts Section ======= -->
+    </section>
+    <!-- End -->
+    <!-- ======= JUMLAH ======= -->
     <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
-
         <div class="row">
         <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
@@ -135,7 +127,6 @@
             </div>
           </div>
           
-
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <i class="bi bi-journal-richtext"></i>
@@ -161,18 +152,16 @@
           </div>
 
         </div>
-
       </div>
-    </section><!-- End Counts Section -->
+    </section>
+    <!-- End  -->
 
 
-    <!-- ======= Services Section ======= -->
+    <!-- ======= KEGIATAN======= -->
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Kegiatan</h2>
-          
         </div>
 
         <div class="row">
@@ -187,7 +176,7 @@
           <div class="" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-card-checklist"></i></div>
-              <h4><a href="<?=base_url('welcome/kegiatan_telah_welcome');?>">KEGIATAN SELESAI</a></h4>
+              <h4><a href="<?=base_url('welcome/kegiatan_telah_welcome');?>">KEGIATAN SELESAI KCS</a></h4>
               <p>Klik disini untuk melihat kegiatan yang telah selesai di  kecamatan cimahi selatan</p>
             </div>
           </div>
@@ -195,22 +184,21 @@
           
 
       </div>
-    </section><!-- End Services Section -->
+    </section>
+    <!-- End -->
 
           </div>
           <div class="swiper-pagination"></div>
-        </div>
+          </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Portfolio Section ======= -->
+    </section>
+    <!-- ======= Info Kecamatan Cimahi Selatan ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
-
       <div class="section-title">
           <h2>Info Kecamatan Cimahi Selatan</h2>
-        </div>
+      </div>
         <?php
      foreach ($info as $mhs ):?>   
         <div class="row portfolio-container">
@@ -227,9 +215,9 @@
         </div>
       </div>
     </section>
-
-
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->
+  <!-- END Info Kecamatan Cimahi Selatan -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">

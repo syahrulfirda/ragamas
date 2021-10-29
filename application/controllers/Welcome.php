@@ -25,7 +25,7 @@ class Welcome extends CI_Controller {
 	
 	}
 	
-// melihat informasi kecamatan cimahi selatan pada halaman beranda
+// melihat informasi kecamatan cimahi selatan pada hal	aman beranda
 	public function info($id){
         $data['info'] = $this->m_info->lihatinfo($id);
 		$this->load->view('templates/beranda_header');
@@ -36,8 +36,11 @@ class Welcome extends CI_Controller {
 
 public function formpengaduan()
 	{
+
 		$data['title']='Lapor Pengaduan Anda';
+		$this->load->view('templates/auth_header',$data);
 		$this->load->view('user/mas_pengaduan',$data);
+		$this->load->view('templates/auth_footer');
 	}
 	public function panduan()
 	{

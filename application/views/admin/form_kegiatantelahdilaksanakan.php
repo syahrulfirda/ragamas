@@ -40,7 +40,7 @@
                                                         <div class="col-lg">
                                                             <div class="p-5">
                                                                 <div class="text-center">
-                                                                    <h1 class="h4 text-gray-900 mb-4">Input Kegiatan yang telah dilaksanakan</h1>
+                                                                    <h1 class="h4 text-gray-900 mb-4">Input Kegiatan telah selesai</h1>
                                                                 </div>
                                                                 <?=$this->session->flashdata('message');?>
                                                                 <?=form_open_multipart('admin/tambah_kegiatan_telah_aksi')?>
